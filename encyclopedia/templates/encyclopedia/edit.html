@@ -1,0 +1,66 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+{% block style %}
+<style>
+
+#id_title {
+    
+    margin: 10px;
+    margin-right: 23em;
+}
+/* #id_title::after {
+    content: "\a";
+    white-space: pre;
+} */
+
+label {
+    
+    margin-left: 111px;
+}
+
+
+/* label:nth-child(1) {
+    margin-left: 76px;
+    background: red;
+} */
+#divtwo{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 5px;
+    margin-top: 20px;
+}
+#secondlabel{
+    margin-left: 10px;
+}
+#id_content{
+    height: 149px;
+}
+#button{
+    display: block;
+    margin-left: 10px;
+    
+}
+</style>
+{% endblock %}
+
+{% block body %}
+    <h1>hello</h1>
+    <div>
+    <form action="{% url 'saveedit' %}" method="POST">
+        {% csrf_token %}
+        <label for="id_title">Edit Title:</label>
+        <input type="text" name="title" required="" id="id_title" value="{{title}}">
+        <br>
+        <div id="divtwo">
+            <label for="id_content" id="secondlabel">Edit content:</label>
+            <textarea name="content" cols="400" rows="10" required="" id="id_content" spellcheck="false">{{content}}</textarea>
+            <input type="submit" value="save" id="button"> 
+        </div>
+    </form>
+   </div>
+{% endblock %}
+

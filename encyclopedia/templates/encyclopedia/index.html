@@ -1,0 +1,24 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+
+{% block body %}
+    <h1>All Pages</h1>
+
+    <ul>
+        {% for entry in entries %}
+            
+             
+
+        <a href="wiki/{{entry}}"> <li>{{ entry }}</li> </a>
+
+        {% endfor %} 
+    </ul>
+    <!-- <iframe width="800" height="450" src="https://www.youtube.com/embed/t0YtIiwKPC0?list=PLhSp9OSVmeyKVpGhYpSMkSkbohXDMrrHO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+{% endblock %}
+
+
+
